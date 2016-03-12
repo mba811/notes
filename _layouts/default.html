@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+   <!-- <link rel="apple-touch-icon" href="http://{{ site.cdn }}/touch-icon-iphone.png" /> -->
+   <link rel="apple-touch-icon-precomposed" href="http://{{ site.cdn }}/touch-icon-iphone-precomposed.png" />
+   <link rel="apple-touch-icon" sizes="72x72" href="http://{{ site.cdn }}/touch-icon-ipad.png" />
+   <link rel="apple-touch-icon" sizes="114x114" href="http://{{ site.cdn }}/touch-icon-iphone-retina.png" />
+   <link rel="apple-touch-icon" sizes="144x144" href="http://{{ site.cdn }}/touch-icon-ipad-retina.png" />
+   
+   <title>{{ page.title }}</title>
+   <meta name="author" content="Notes | 洛桑扎巴" />
+   <link href="http://feeds.feedburner.com/Blog-ZH" rel="alternate" title="Notes | 洛桑扎巴" type="application/atom+xml" />
+   <link rel="shortcut icon" type="image/x-icon" href="http://{{ site.cdn }}/favicon.ico">
+      
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css?1026" type="text/css" media="screen, projection" />
+   <!-- <link rel="stylesheet" href="/css/screen.css?0904" type="text/css" media="screen, projection" /> -->
+   
+   <script type="text/javascript" charset="utf-8">
+   // Mobile Safari in standalone mode
+   if(("standalone" in window.navigator) && window.navigator.standalone){
+	   
+   	// If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
+   	var noddy, remotes = true;
+	
+   	document.addEventListener('click', function(event) {
+		
+   		noddy = event.target;
+		
+   		// Bubble up until we hit link or top HTML element. Warning: BODY element is not compulsory so better to stop on HTML
+   		while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+   	        noddy = noddy.parentNode;
+   	    }
+		
+   		if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+   		{
+   			event.preventDefault();
+   			document.location.href = noddy.href;
+   		}
+	
+   	},false);
+   }
+   </script>
+</head>
+<body>
+	
+<div class="site">
+	<div>
+  <pre class="nav margin-for-mobile">["<a href='/notes.html'>Notes</a>", "<a href='/ubuntu.html'>Ubuntu</a>", "<a href='/centos.html'>CentOS</a>", "<a href='/osx.html'>OS X</a>", "<a href='/tools.html'>Tools</a>", "<a href='/study.html'>Study</a>", "<a href='/idea.html'>Idea</a>", "<a href='/docker.html'>Docker</a>", "<a href='/about.html'>About</a>"]</pre>
+	</div>
+  <br />
+  {{ content }}
+  
+<div class="footer"></div>
+<div class="power">  
+  Powered by <a href="http://github.com/" targe="_blank">GitHub</a> &nbsp;&amp;&amp;&nbsp; <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> | <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA">CC BY-NC-SA</a>
+</div>
+</div>
+
+</a>
+</body>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-60524410-2']);
+  _gaq.push(['_setDomainName', 'Notes | 洛桑扎巴']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

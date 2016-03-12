@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<div id="post">
+	<h1>{{ page.title }}</h1>
+	<div class="copyright">
+	作者: 洛桑扎巴 | 个人学习记录，内容来自网络，如果有相关版权问题请联系我，我会删除。<br />
+	网址: http://notes.11ten.net{{page.url}}
+	</div>
+
+	{{ content }}
+	(完)
+
+	<div class="post-info">
+		{{ page.date | date_to_string }}  
+	
+		{% if city %} 
+			于 {{ city }} 
+		{% endif %}
+	
+		{% if more %}
+			| {{ more }}
+		{% endif %}
+	</div>
+	
+	<!-- disqus start -->
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	    var disqus_shortname = 'ztd811'; // required: replace example with your forum shortname
+
+	    /* * * DON'T EDIT BELOW THIS LINE * * */
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	<!-- disqus end -->
+
+	<!-- related start -->
+	<div id="related">
+	  <h2>相关内容</h2>
+	  <ul class="posts">
+	    {% for post in site.related_posts limit:5 %}
+	      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+	<!-- related end -->
+</div>

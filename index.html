@@ -1,0 +1,72 @@
+---
+layout: default
+title: Notes | Tsong khapa
+---
+
+<div id="home">
+  <h1>Notes</h1>
+  <ul class="posts">
+	{% for post in site.tags.notes limit:10 %} 
+		<li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+	<a href="/notes.html">更多</a>
+  </ul>
+  
+  <h1>Ubuntu</h1>
+  <ul class="posts">
+    {% for post in site.tags.ubuntu limit:10 %}
+		<li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+	<a href="/ubuntu.html">更多</a>
+  </ul>
+
+  <h1>OS X</h1>
+  <ul class="posts">
+    {% for post in site.tags.osx limit:10 %}
+    <li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  <a href="/osx.html">更多</a>
+  </ul>
+
+  <h1>CentOS</h1>
+  <ul class="posts">
+    {% for post in site.tags.centos limit:10 %}
+		<li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+	<a href="/centos.html">更多</a>
+  </ul>
+  
+  <h1>Tools</h1>
+  <ul class="posts">
+    {% for post in site.tags.tools limit:10 %}
+    <li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  <a href="/tools.html">更多</a>
+  </ul>
+
+  <h1>Study</h1>
+  <ul class="posts">
+      {% for post in site.tags.study limit:10 %}
+	  	<li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+	  <a href="/study.html">更多</a>
+  </ul>
+	
+  <h1>Idea</h1>
+  <ul class="posts">
+      {% for post in site.tags.idea limit:10 %}
+      <li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    <a href="/idea.html">更多</a>
+  </ul>
+
+  {% if site.tags.docker %}
+  <h1>Docker</h1>
+  <ul class="posts">
+      {% for post in site.tags.docker limit:10 %}
+  		<li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+	  <a href="/docker.html">更多</a>
+  </ul>
+  {% endif %}
+</div>

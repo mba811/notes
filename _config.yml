@@ -1,0 +1,5 @@
+permalink: /:title.html
+markdown: rdiscount
+highlighter: pygments
+redirects: yes
+#cdn: 7q5cfr.com1.z0.glb.clouddn.com
